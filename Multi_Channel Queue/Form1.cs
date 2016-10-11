@@ -18,7 +18,17 @@ namespace Multi_Channel_Queue
 
         private void BTN_Simulate_Click(object sender, EventArgs e)
         {
+            CreateCustomers(number_of_customers);
+        }
 
+        private void CreateCustomers(int number_of_customers)
+        {
+            for (int i = 0; i < number_of_customers; i++)
+            {
+                Customer customer = new Customer();
+
+                SimSystem.Customers.Add(customer);
+            }
         }
 
         private void BTN_Calculate_Click(object sender, EventArgs e)
@@ -70,6 +80,6 @@ namespace Multi_Channel_Queue
                 DGV_Server_distribution_service_time.Rows[i].Cells[3].Value = string.Format("{0} - {1}", s.Range.Key, s.Range.Value).ToString();
 
             }
-        }
+        }       
     }
 }

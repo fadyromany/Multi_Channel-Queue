@@ -15,8 +15,8 @@ namespace Multi_Channel_Queue
         private int server_index;
         private int arrival_time;
         private int inter_arrival_time;
-        public static int getTotalDelayTime()
-        {
+
+        public static int getTotalDelayTime()        {
             int Total = 0;
             foreach (Customer c in SimSystem.Customers)
             {
@@ -28,7 +28,6 @@ namespace Multi_Channel_Queue
         {
             return SimSystem.Customers.Count;
         }
-
         public Customer(int delay_time=0, int service_time_begin=0, int service_time_end=0, int service_duration=0, int server_index=-1, int arrival_time=0, int inter_arrival_time=0)
         {
             this.delay_time = delay_time;
@@ -102,10 +101,6 @@ namespace Multi_Channel_Queue
         {
             this.service_time_begin = Time;
         }
-
-
-
-
     }
 
 }
